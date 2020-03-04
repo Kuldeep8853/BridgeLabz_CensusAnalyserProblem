@@ -4,9 +4,13 @@ namespace CensusAnalyserProblem
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Welcome the Census Analyser Program");
+            string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
+            int record=StateCensusAnalyser.StateLoadData(Path);
+            Console.WriteLine(record);
+            int LineOfData= CSVStateCensus.CVSReadData(Path);
+            Console.WriteLine(LineOfData);
         }
     }
 }
