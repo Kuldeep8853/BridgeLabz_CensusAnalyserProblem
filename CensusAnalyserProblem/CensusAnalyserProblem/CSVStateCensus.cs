@@ -53,7 +53,6 @@ namespace CensusAnalyserProblem
         }
         public static void CheckDelimiter(string filePath, string header = "AreaInSqKm")
         {
-            string line1 = File.ReadAllText(filePath);
             var file_total = File.ReadLines(filePath);
             string[] line_element = file_total.ToArray();
             if (!line_element[0].Contains(header))
@@ -61,7 +60,7 @@ namespace CensusAnalyserProblem
                 throw new CensusAnalyserException(CensusException.Wrong_Header + "");
             }
 
-            if (!line1.Contains(";"))
+            if (!file_total.Contains(";"))
             {
                 throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
             }

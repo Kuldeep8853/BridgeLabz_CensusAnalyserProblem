@@ -29,7 +29,6 @@ namespace CensusAnalyserProblem
                         list.Add(subData);
                     }
                     StateData.Add(list);
-
                 }
                 List<List<string>>.Enumerator iterator = StateData.GetEnumerator();
                 while (iterator.MoveNext())
@@ -37,13 +36,11 @@ namespace CensusAnalyserProblem
                     List<string> line = iterator.Current;
                     foreach (string data in line)
                     {
-
                         Console.Write(data + " ");
                     }
                     Console.WriteLine();
                 }
                 return StateData.Count;
-
             }
             catch (FileNotFoundException)
             {
@@ -52,18 +49,16 @@ namespace CensusAnalyserProblem
         }
         public static void CheckDelimiterAndHeader(string filePath, string header = "StateCode")
         {
-                string line1 = File.ReadAllText(filePath);
-                var file_total = File.ReadLines(filePath);
-                string[] line_element = file_total.ToArray();
-                if (!line_element[0].Contains(header))
-                {
-                    throw new CensusAnalyserException(CensusException.Wrong_Header + "");
-                }
-
-                if (!line1.Contains(";"))
-                {
-                    throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
-                }
+            var file_total = File.ReadLines(filePath);
+            string[] line_element = file_total.ToArray();
+            if (!line_element[0].Contains(header))
+            {
+                throw new CensusAnalyserException(CensusException.Wrong_Header + "");
+            }
+            if (!file_total.Contains(";"))
+            {
+                throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
+            }
         }
     }
 }
