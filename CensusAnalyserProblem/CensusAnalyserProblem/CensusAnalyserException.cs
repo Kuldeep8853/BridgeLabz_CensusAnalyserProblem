@@ -1,12 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace CensusAnalyserProblem
 {
     public enum CensusException
     {
-        Wrong_File_Path
+        Wrong_File_Path,
+        Wrong_Delimiter
     }
-    public class CensusAnalyserException : FileNotFoundException
+    public class CensusAnalyserException : Exception
     {
        
         public string mgs;

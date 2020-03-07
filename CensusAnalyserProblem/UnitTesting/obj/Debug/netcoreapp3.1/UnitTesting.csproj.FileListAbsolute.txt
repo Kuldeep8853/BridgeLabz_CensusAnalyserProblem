@@ -8,6 +8,7 @@ D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\UnitTesting\bin\Debug\
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.runtimeconfig.dev.json
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.dll
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.pdb
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\UnitTesting\bin\Debug\netcoreapp3.1\CsvHelper.dll
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\UnitTesting\bin\Debug\netcoreapp3.1\CsvReaderWriter.dll
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\UnitTesting\bin\Debug\netcoreapp3.1\LumenWorks.Framework.IO.dll
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
