@@ -7,7 +7,10 @@ namespace CensusAnalyserProblem
         public static void Main()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            CSVState.StateLoadData(Path);
+            DCsvStateDataLoad del = new DCsvStateDataLoad(CSVState.StateLoadData);
+            DCheckCSVDelimiterAndHeader del1 = new DCheckCSVDelimiterAndHeader(CSVState.CheckDelimiterAndHeader);
+            Console.WriteLine(del(Path));
+           del1(Path);
         }
     }
 }

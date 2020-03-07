@@ -5,11 +5,17 @@ using System.Linq;
 
 namespace CensusAnalyserProblem
 {
+    // Declaring the delegates 
+    // Here return type and parameter type should  
+    // be same as the return type and parameter type 
+    // of the two methods 
+    // "CsvStateDataLoad" and "CheckDelimiter" are two delegate names 
+    public delegate int DCsvStateDataLoad(string path);
+    public delegate void DCheckCSVDelimiterAndHeader(string path, string header = "StateCode");
     public class CSVState
     {
         public static int StateLoadData(string filePath)
         {
-
             try
             {
                 List<List<string>> StateData = new List<List<string>>();
@@ -44,20 +50,20 @@ namespace CensusAnalyserProblem
                 throw new FileNotFoundException(CensusException.Wrong_File_Path + "");
             }
         }
-        public static void CheckDelimiter(string filePath, string header = "StateCode")
+        public static void CheckDelimiterAndHeader(string filePath, string header = "StateCode")
         {
-            string line1 = File.ReadAllText(filePath);
-            var file_total = File.ReadLines(filePath);
-            string[] line_element = file_total.ToArray();
-            if (!line_element[0].Contains(header))
-            {
-                throw new CensusAnalyserException(CensusException.Wrong_Header + "");
-            }
+                string line1 = File.ReadAllText(filePath);
+                var file_total = File.ReadLines(filePath);
+                string[] line_element = file_total.ToArray();
+                if (!line_element[0].Contains(header))
+                {
+                    throw new CensusAnalyserException(CensusException.Wrong_Header + "");
+                }
 
-            if (!line1.Contains(";"))
-            {
-                throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
-            }
+                if (!line1.Contains(";"))
+                {
+                    throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
+                }
         }
     }
 }

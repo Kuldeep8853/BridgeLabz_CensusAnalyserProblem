@@ -15,7 +15,8 @@ namespace UnitTesting
         public void MatchRecords()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
-            int actual = CSVStateCensus.StateLoadData(Path);
+            DCsvStateDataLoad1 del = new DCsvStateDataLoad1(CSVStateCensus.StateLoadData);
+            int actual = del(Path);
             int expected = StateCensusAnalyser.CSVLoadData(Path);
             Assert.AreEqual(expected, actual);
         }
@@ -27,7 +28,8 @@ namespace UnitTesting
         [Test]
         public void ThrowExcetions()
         {
-            var ex = Assert.Throws<FileNotFoundException>(() => CSVStateCensus.StateLoadData("Wrong_File_Path"));
+            DCsvStateDataLoad1 del = new DCsvStateDataLoad1(CSVStateCensus.StateLoadData);
+            var ex = Assert.Throws<FileNotFoundException>(() => del("Wrong_File_Path"));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
 
@@ -38,8 +40,9 @@ namespace UnitTesting
         [Test]
         public void ThrowTypeExcetions()
         {
-            string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.txt"; 
-            var ex = Assert.Throws<FileNotFoundException>(() => CSVStateCensus.StateLoadData(Path));
+            string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.txt";
+            DCsvStateDataLoad1 del = new DCsvStateDataLoad1(CSVStateCensus.StateLoadData);
+            var ex = Assert.Throws<FileNotFoundException>(() => del(Path));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
         
@@ -51,7 +54,8 @@ namespace UnitTesting
         public void CheckDelimiter()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
-            var ex = Assert.Throws<CensusAnalyserException>(() => CSVStateCensus.CheckDelimiter(Path));
+            DCheckCSVDelimiterAndHeader1 del1 = new DCheckCSVDelimiterAndHeader1(CSVStateCensus.CheckDelimiter);
+            var ex = Assert.Throws<CensusAnalyserException>(() => del1(Path));
             Assert.That(ex.mgs, Is.EqualTo(CensusException.Wrong_Delimiter.ToString()));
         }
 
@@ -63,7 +67,8 @@ namespace UnitTesting
         public void CheckHeaderOfCSVFile()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
-            var ex = Assert.Throws<CensusAnalyserException>(() => CSVStateCensus.CheckDelimiter(Path,"Wrong_Header"));
+            DCheckCSVDelimiterAndHeader1 del1 = new DCheckCSVDelimiterAndHeader1(CSVStateCensus.CheckDelimiter);
+            var ex = Assert.Throws<CensusAnalyserException>(() => del1(Path,"Wrong_Header"));
             Assert.That(ex.mgs, Is.EqualTo(CensusException.Wrong_Header.ToString()));
         }
 
@@ -75,7 +80,8 @@ namespace UnitTesting
         public void MatchRecords1()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            int actual = CSVState.StateLoadData(Path);
+            DCsvStateDataLoad del = new DCsvStateDataLoad(CSVState.StateLoadData);
+            int actual = del(Path);
             int expected = StateCensusAnalyser.CSVLoadData(Path);
             Assert.AreEqual(expected, actual);
         }
@@ -87,7 +93,8 @@ namespace UnitTesting
         [Test]
         public void ThrowExcetions1()
         {
-            var ex = Assert.Throws<FileNotFoundException>(() => CSVState.StateLoadData("Wrong_File_Path"));
+            DCsvStateDataLoad del = new DCsvStateDataLoad(CSVState.StateLoadData);
+            var ex = Assert.Throws<FileNotFoundException>(() => del("Wrong_File_Path"));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
 
@@ -99,7 +106,8 @@ namespace UnitTesting
         public void ThrowTypeExcetions1()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.txt";
-            var ex = Assert.Throws<FileNotFoundException>(() => CSVState.StateLoadData(Path));
+            DCsvStateDataLoad del = new DCsvStateDataLoad(CSVState.StateLoadData);
+            var ex = Assert.Throws<FileNotFoundException>(() => del(Path));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
 
@@ -111,7 +119,8 @@ namespace UnitTesting
         public void CheckDelimiter1()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            var ex = Assert.Throws<CensusAnalyserException>(() => CSVState.CheckDelimiter(Path));
+            DCheckCSVDelimiterAndHeader del1 = new DCheckCSVDelimiterAndHeader(CSVState.CheckDelimiterAndHeader);
+            var ex = Assert.Throws<CensusAnalyserException>(() => del1(Path));
             Assert.That(ex.mgs, Is.EqualTo(CensusException.Wrong_Delimiter.ToString()));
         }
 
@@ -123,7 +132,8 @@ namespace UnitTesting
         public void CheckHeaderOfCSVFile1()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            var ex = Assert.Throws<CensusAnalyserException>(() => CSVState.CheckDelimiter(Path, "Wrong_Header"));
+            DCheckCSVDelimiterAndHeader del1 = new DCheckCSVDelimiterAndHeader(CSVState.CheckDelimiterAndHeader);
+            var ex = Assert.Throws<CensusAnalyserException>(() => del1(Path, "Wrong_Header"));
             Assert.That(ex.mgs, Is.EqualTo(CensusException.Wrong_Header.ToString()));
         }
     }

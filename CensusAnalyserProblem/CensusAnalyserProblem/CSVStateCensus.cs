@@ -5,11 +5,18 @@ using System.Linq;
 
 namespace CensusAnalyserProblem
 {
-   public class CSVStateCensus
-   {
+    // Declaring the delegates 
+    // Here return type and parameter type should  
+    // be same as the return type and parameter type 
+    // of the two methods 
+    // "CsvStateDataLoad" and "CheckDelimiter" are two delegate names 
+    public delegate int DCsvStateDataLoad1(string path);
+    public delegate void DCheckCSVDelimiterAndHeader1(string path, string header = "AreaInSqKm");
+    public class CSVStateCensus
+    {
+        
         public static int StateLoadData(string filePath)
         {
-           
             try
             {
                 List<List<string>> StateData = new List<List<string>>();
