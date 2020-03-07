@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace CensusAnalyserProblem
 {
-   public class CSVStateCensus
-   {
+    public class CSVState
+    {
         public static int StateLoadData(string filePath)
         {
-           
+
             try
             {
                 List<List<string>> StateData = new List<List<string>>();
@@ -44,7 +44,7 @@ namespace CensusAnalyserProblem
                 throw new FileNotFoundException(CensusException.Wrong_File_Path + "");
             }
         }
-        public static void CheckDelimiter(string filePath, string header = "AreaInSqKm")
+        public static void CheckDelimiter(string filePath, string header = "StateCode")
         {
             string line1 = File.ReadAllText(filePath);
             var file_total = File.ReadLines(filePath);
@@ -61,4 +61,3 @@ namespace CensusAnalyserProblem
         }
     }
 }
-
