@@ -12,11 +12,12 @@ namespace UnitTesting
         /// Match the records
         /// </summary>
         [Test]
-        public void MatchRecords()
+        public void Check_NumberOf_Records_Given_Matched()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
-            DCsvStateDataLoad1 del = new DCsvStateDataLoad1(CSVStateCensus.StateLoadData);
-            int actual = del(Path);
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            int actual=builder.Construct1(factory.GetObjectCSVStateCensus(), Path, ",", "AreaInSqKm");
             int expected = StateCensusAnalyser.CSVLoadData(Path);
             Assert.AreEqual(expected, actual);
         }
@@ -26,10 +27,11 @@ namespace UnitTesting
         /// Throw the exception if wrong file path pass
         /// </summary>
         [Test]
-        public void ThrowExcetions()
+        public void Pass_Wrong_FileName_Throw_Wrong_File_Path()
         {
-            DCsvStateDataLoad1 del = new DCsvStateDataLoad1(CSVStateCensus.StateLoadData);
-            var ex = Assert.Throws<FileNotFoundException>(() => del("Wrong_File_Path"));
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            var ex = Assert.Throws<FileNotFoundException>(() => builder.Construct1(factory.GetObjectCSVStateCensus(), "Wrong_File_Path", ",", "AreaInSqKm"));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
 
@@ -38,25 +40,27 @@ namespace UnitTesting
         /// throw the exception if wrong extention file pass
         /// </summary>
         [Test]
-        public void ThrowTypeExcetions()
+        public void Pass_Wrong_FileType_Throw_Wrong_File_Path()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.txt";
-            DCsvStateDataLoad1 del = new DCsvStateDataLoad1(CSVStateCensus.StateLoadData);
-            var ex = Assert.Throws<FileNotFoundException>(() => del(Path));
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            var ex = Assert.Throws<FileNotFoundException>(() => builder.Construct1(factory.GetObjectCSVStateCensus(), Path, ",", "AreaInSqKm"));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
-        
+
         /// <summary>
         /// Test Case 1.4
         /// throw the exception if wrong delimiter pass
         /// </summary>
         [Test]
-        public void CheckDelimiter()
+        public void Pass_Wrong_Delimiter_ThrowExceptionWrong_Delimiter()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
-            DCheckCSVDelimiterAndHeader1 del1 = new DCheckCSVDelimiterAndHeader1(CSVStateCensus.CheckDelimiter);
-            var ex = Assert.Throws<CensusAnalyserException>(() => del1(Path));
-            Assert.That(ex.mgs, Is.EqualTo(CensusException.Wrong_Delimiter.ToString()));
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            var ex = Assert.Throws<FileNotFoundException>(() => builder.Construct1(factory.GetObjectCSVStateCensus(), Path, ";", "AreaInSqKm"));
+            Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_Delimiter.ToString()));
         }
 
         /// <summary>
@@ -64,12 +68,13 @@ namespace UnitTesting
         /// throw the exception if wrong header pass
         /// </summary>
         [Test]
-        public void CheckHeaderOfCSVFile()
+        public void Pass_Wrong_Header_File_ThrowException()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
-            DCheckCSVDelimiterAndHeader1 del1 = new DCheckCSVDelimiterAndHeader1(CSVStateCensus.CheckDelimiter);
-            var ex = Assert.Throws<CensusAnalyserException>(() => del1(Path,"Wrong_Header"));
-            Assert.That(ex.mgs, Is.EqualTo(CensusException.Wrong_Header.ToString()));
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            var ex = Assert.Throws<FileNotFoundException>(() => builder.Construct1(factory.GetObjectCSVStateCensus(), Path, ";", "Wrong_Header"));
+            Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_Header.ToString()));
         }
 
         /// <summary>
@@ -77,11 +82,12 @@ namespace UnitTesting
         /// Match the records
         /// </summary>
         [Test]
-        public void MatchRecords1()
+        public void Check_NumberOf_Records_Given_Matched1()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            DCsvStateDataLoad del = new DCsvStateDataLoad(CSVState.StateLoadData);
-            int actual = del(Path);
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            int actual = builder.Construct1(factory.GetObjectCSVState(), Path, ",", "StateCode");
             int expected = StateCensusAnalyser.CSVLoadData(Path);
             Assert.AreEqual(expected, actual);
         }
@@ -91,10 +97,11 @@ namespace UnitTesting
         /// Throw the exception if wrong file path pass
         /// </summary>
         [Test]
-        public void ThrowExcetions1()
+        public void Pass_Wrong_FileName_Throw_Wrong_File_Path1()
         {
-            DCsvStateDataLoad del = new DCsvStateDataLoad(CSVState.StateLoadData);
-            var ex = Assert.Throws<FileNotFoundException>(() => del("Wrong_File_Path"));
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            var ex = Assert.Throws<FileNotFoundException>(() => builder.Construct1(factory.GetObjectCSVState(), "Wrong_File_Path", ",", "StateCode"));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
 
@@ -103,11 +110,12 @@ namespace UnitTesting
         /// throw the exception if wrong extention file pass
         /// </summary>
         [Test]
-        public void ThrowTypeExcetions1()
+        public void Pass_Wrong_FileType_Throw_Wrong_File_Path1()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.txt";
-            DCsvStateDataLoad del = new DCsvStateDataLoad(CSVState.StateLoadData);
-            var ex = Assert.Throws<FileNotFoundException>(() => del(Path));
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            var ex = Assert.Throws<FileNotFoundException>(() => builder.Construct1(factory.GetObjectCSVState(), Path, ",", "AreaInSqKm"));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
 
@@ -116,12 +124,13 @@ namespace UnitTesting
         /// throw the exception if wrong delimiter pass
         /// </summary>
         [Test]
-        public void CheckDelimiter1()
+        public void Pass_Wrong_Delimiter_ThrowExceptionWrong_Delimiter1()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            DCheckCSVDelimiterAndHeader del1 = new DCheckCSVDelimiterAndHeader(CSVState.CheckDelimiterAndHeader);
-            var ex = Assert.Throws<CensusAnalyserException>(() => del1(Path));
-            Assert.That(ex.mgs, Is.EqualTo(CensusException.Wrong_Delimiter.ToString()));
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            var ex = Assert.Throws<FileNotFoundException>(() => builder.Construct1(factory.GetObjectCSVState(), Path, ";", "AreaInSqKm"));
+            Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_Delimiter.ToString()));
         }
 
         /// <summary>
@@ -129,12 +138,13 @@ namespace UnitTesting
         /// throw the exception if wrong header pass
         /// </summary>
         [Test]
-        public void CheckHeaderOfCSVFile1()
+        public void Pass_Wrong_Header_File_ThrowException1()
         {
             string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            DCheckCSVDelimiterAndHeader del1 = new DCheckCSVDelimiterAndHeader(CSVState.CheckDelimiterAndHeader);
-            var ex = Assert.Throws<CensusAnalyserException>(() => del1(Path, "Wrong_Header"));
-            Assert.That(ex.mgs, Is.EqualTo(CensusException.Wrong_Header.ToString()));
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            var ex = Assert.Throws<FileNotFoundException>(() => builder.Construct1(factory.GetObjectCSVState(), Path, ";", "Wrong_Header"));
+            Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_Header.ToString()));
         }
     }
 }

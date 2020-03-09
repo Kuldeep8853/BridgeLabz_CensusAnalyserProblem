@@ -1,70 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=SVStateCensus.cs" Company="Bridgelabz">
+//   Copyright © 2020 Company="BridgeLabz"
+// </copyright>
+// <creator name="Kuldeep Kasaudhan"/>
+// ----------------------------------------------------------------------------------------------------------------------
 
 namespace CensusAnalyserProblem
 {
-    // Declaring the delegates 
-    // Here return type and parameter type should  
-    // be same as the return type and parameter type 
-    // of the two methods 
-    // "CsvStateDataLoad" and "CheckDelimiter" are two delegate names 
-    public delegate int DCsvStateDataLoad1(string path);
-    public delegate void DCheckCSVDelimiterAndHeader1(string path, string header = "AreaInSqKm");
-    public class CSVStateCensus
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+
+    public class CSVStateCensus : ICSVFileBuilder
     {
-        
-        public static int StateLoadData(string filePath)
+        /// <inheritdoc/>
+        public int StateLoadData(string filePath, string delimiter = ",", string header = "AreaInSqKm")
         {
             try
             {
-                List<List<string>> StateData = new List<List<string>>();
+                var file_total = File.ReadLines(filePath);
+                string[] line_element = file_total.ToArray();
+                if (!line_element[0].Contains(header))
+                {
+                    throw new CensusAnalyserException(CensusException.Wrong_Header + string.Empty);
+                }
+
+                List<List<string>> stateData = new List<List<string>>();
                 foreach (var line in File.ReadLines(filePath))
                 {
                     List<string> list = new List<string>();
+
                     // process line here
-                    string[] data = line.Split(",");
+                    string[] data = line.Split(delimiter);
+                    if (data.Length < 2)
+                    {
+                        throw new CensusAnalyserException(CensusException.Wrong_Delimiter + string.Empty);
+                    }
+
                     foreach (string subData in data)
                     {
                         list.Add(subData);
                     }
-                    StateData.Add(list);
 
+                    stateData.Add(list);
                 }
-                List<List<string>>.Enumerator iterator = StateData.GetEnumerator();
+
+                List<List<string>>.Enumerator iterator = stateData.GetEnumerator();
                 while (iterator.MoveNext())
                 {
                     List<string> line = iterator.Current;
                     foreach (string data in line)
                     {
-
                         Console.Write(data + " ");
                     }
+
                     Console.WriteLine();
                 }
-                return StateData.Count;
 
+                return stateData.Count;
             }
             catch (FileNotFoundException)
             {
-                throw new FileNotFoundException(CensusException.Wrong_File_Path + "");
-            }
-        }
-        public static void CheckDelimiter(string filePath, string header = "AreaInSqKm")
-        {
-            var file_total = File.ReadLines(filePath);
-            string[] line_element = file_total.ToArray();
-            if (!line_element[0].Contains(header))
-            {
-                throw new CensusAnalyserException(CensusException.Wrong_Header + "");
-            }
-
-            if (!file_total.Contains(";"))
-            {
-                throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
+                throw new FileNotFoundException(CensusException.Wrong_File_Path + string.Empty);
             }
         }
     }
 }
-

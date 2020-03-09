@@ -6,11 +6,14 @@ namespace CensusAnalyserProblem
     {
         public static void Main()
         {
-            string Path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            DCsvStateDataLoad del = new DCsvStateDataLoad(CSVState.StateLoadData);
-            DCheckCSVDelimiterAndHeader del1 = new DCheckCSVDelimiterAndHeader(CSVState.CheckDelimiterAndHeader);
-            Console.WriteLine(del(Path));
-           del1(Path);
+            string Path1 = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
+            Builder builder = new Builder();
+            Factory factory = new Factory();
+            builder.Construct1(factory.GetObjectCSVStateCensus(), Path1,",", "AreaInSqKm");
+            Console.WriteLine();
+            string Path2 = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
+            builder.Construct1(factory.GetObjectCSVState(), Path2, ",", "StateCode");
         }
     }
 }
+ 

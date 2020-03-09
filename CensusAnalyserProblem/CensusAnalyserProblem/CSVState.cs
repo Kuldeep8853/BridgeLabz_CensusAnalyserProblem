@@ -2,28 +2,41 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace CensusAnalyserProblem
 {
-    // Declaring the delegates 
-    // Here return type and parameter type should  
-    // be same as the return type and parameter type 
-    // of the two methods 
-    // "CsvStateDataLoad" and "CheckDelimiter" are two delegate names 
-    public delegate int DCsvStateDataLoad(string path);
-    public delegate void DCheckCSVDelimiterAndHeader(string path, string header = "StateCode");
-    public class CSVState
+    /// <summary>
+    /// Declaring the delegates here return type and parameter type should 
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <param name="delimiter"></param>
+    /// <param name="header"></param>
+    /// <returns></returns>
+    public delegate int DelegateCsvStateDataLoad(string filePath, string delimiter = ",",  string header="");
+    public class CSVState : ICSVFileBuilder
     {
-        public static int StateLoadData(string filePath)
+        public int StateLoadData(string filePath, string delimiter = ",", string header = "StateCode")
         {
             try
             {
+                var file_total = File.ReadLines(filePath);
+                string[] line_element = file_total.ToArray();
+                if (!line_element[0].Contains(header))
+                {
+                    throw new CensusAnalyserException(CensusException.Wrong_Header + "");
+                }
                 List<List<string>> StateData = new List<List<string>>();
                 foreach (var line in File.ReadLines(filePath))
                 {
                     List<string> list = new List<string>();
                     // process line here
-                    string[] data = line.Split(",");
+                    string[] data = line.Split(delimiter);
+                    if (data.Length < 2)
+                    {
+                        throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
+                    }
+
                     foreach (string subData in data)
                     {
                         list.Add(subData);
@@ -45,19 +58,6 @@ namespace CensusAnalyserProblem
             catch (FileNotFoundException)
             {
                 throw new FileNotFoundException(CensusException.Wrong_File_Path + "");
-            }
-        }
-        public static void CheckDelimiterAndHeader(string filePath, string header = "StateCode")
-        {
-            var file_total = File.ReadLines(filePath);
-            string[] line_element = file_total.ToArray();
-            if (!line_element[0].Contains(header))
-            {
-                throw new CensusAnalyserException(CensusException.Wrong_Header + "");
-            }
-            if (!file_total.Contains(";"))
-            {
-                throw new CensusAnalyserException(CensusException.Wrong_Delimiter + "");
             }
         }
     }
