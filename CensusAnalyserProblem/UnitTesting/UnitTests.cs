@@ -27,9 +27,9 @@ namespace UnitTesting
             string path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
             Factory factory = new Factory();
             DelegateCsvStateDataLoad deleget = new DelegateCsvStateDataLoad(Builder.Construct);
-            int actual = deleget(factory.GetObjectCSVStateCensus(), path);
+            //int actual = deleget(factory.GetObjectCSVStateCensus(), path);
             int expected = StateCensusAnalyser.CSVLoadData(path);
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.ToString(), deleget(factory.GetObjectCSVStateCensus(), path));
         }
 
         /// <summary>
@@ -97,9 +97,9 @@ namespace UnitTesting
             string path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
             Factory factory = new Factory();
             DelegateCsvStateDataLoad deleget = new DelegateCsvStateDataLoad(Builder.Construct);
-            int actual = deleget(factory.GetObjectCSVState(), path);
+            string actual = deleget(factory.GetObjectCSVState(), path);
             int expected = StateCensusAnalyser.CSVLoadData(path);
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.ToString(), actual);
         }
 
         /// <summary>

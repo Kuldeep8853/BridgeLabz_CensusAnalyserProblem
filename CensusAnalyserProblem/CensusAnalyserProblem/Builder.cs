@@ -5,8 +5,12 @@
 // </copyright>
 // <creator name="Kuldeep Kasaudhan"/>
 // ----------------------------------------------------------------------------------------------------------------------
+
 namespace CensusAnalyserProblem
 {
+    using System;
+    using System.IO;
+
     /// <summary>
     /// Creating delegate and call the Builder method.
     /// </summary>
@@ -15,7 +19,8 @@ namespace CensusAnalyserProblem
     /// <param name="delimiter">delimiter.</param>
     /// <param name="header">header.</param>
     /// <returns>Int type.</returns>
-    public delegate int DelegateCsvStateDataLoad(ICSVFileBuilder builder, string filePath, string delimiter = ",", string header = "");
+    public delegate string DelegateCsvStateDataLoad(ICSVFileBuilder builder, string filePath, string delimiter = ",", string header = "");
+    
     /// <summary>
     /// Builder class use like Directore of Project.
     /// </summary>
@@ -29,10 +34,21 @@ namespace CensusAnalyserProblem
         /// <param name="delimiter"></param>
         /// <param name="header"></param>
         /// <returns>result.</returns>
-        public  static int Construct(ICSVFileBuilder builder, string filePath, string delimiter = ",", string header = "")
+        public  static string Construct(ICSVFileBuilder builder, string filePath, string delimiter = ",", string header = "") 
         {
-           int result = builder.StateLoadData(filePath, delimiter, header);
-           return result;
+            try
+            {
+                int result = builder.StateLoadData(filePath, delimiter, header);
+                return result.ToString();
+            }
+            catch (CensusAnalyserException ex)
+            {
+                throw ex;
+            }
+            catch (FileNotFoundException)
+            {
+                throw new FileNotFoundException(CensusException.Wrong_File_Path + string.Empty);
+            }
         }
     }
 }

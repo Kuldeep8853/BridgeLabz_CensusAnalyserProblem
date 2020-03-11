@@ -18,7 +18,7 @@ namespace CensusAnalyserProblem
         /// <summary>
         /// CSVLoadData method return csv file.
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="filePath">filePath.</param>
         /// <returns>data.Length.</returns>
         public static int CSVLoadData(string filePath)
         {

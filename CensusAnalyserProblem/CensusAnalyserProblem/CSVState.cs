@@ -26,53 +26,46 @@ namespace CensusAnalyserProblem
         /// <returns>Integer.</returns>
         public int StateLoadData(string filePath, string delimiter = ",", string header = "StateCode")
         {
-            try
+            var file_total = File.ReadLines(filePath);
+            string[] line_element = file_total.ToArray();
+            if (!line_element[0].Contains(header))
             {
-                var file_total = File.ReadLines(filePath);
-                string[] line_element = file_total.ToArray();
-                if (!line_element[0].Contains(header))
-                {
-                    throw new CensusAnalyserException(CensusException.Wrong_Header + string.Empty);
-                }
-
-                List<List<string>> stateData = new List<List<string>>();
-                foreach (var line in File.ReadLines(filePath))
-                {
-                    List<string> list = new List<string>();
-
-                    // process line here
-                    string[] data = line.Split(delimiter);
-                    if (data.Length < 2)
-                    {
-                        throw new CensusAnalyserException(CensusException.Wrong_Delimiter + string.Empty);
-                    }
-
-                    foreach (string subData in data)
-                    {
-                        list.Add(subData);
-                    }
-
-                    stateData.Add(list);
-                }
-
-                List<List<string>>.Enumerator iterator = stateData.GetEnumerator();
-                while (iterator.MoveNext())
-                {
-                    List<string> line = iterator.Current;
-                    foreach (string data in line)
-                    {
-                        Console.Write(data + " ");
-                    }
-
-                    Console.WriteLine();
-                }
-
-                return stateData.Count;
+                throw new CensusAnalyserException(CensusException.Wrong_Header + string.Empty);
             }
-            catch (FileNotFoundException)
+
+            List<List<string>> stateData = new List<List<string>>();
+            foreach (var line in File.ReadLines(filePath))
             {
-                throw new FileNotFoundException(CensusException.Wrong_File_Path + string.Empty);
+                List<string> list = new List<string>();
+
+                // process line here
+                string[] data = line.Split(delimiter);
+                if (data.Length < 2)
+                {
+                    throw new CensusAnalyserException(CensusException.Wrong_Delimiter + string.Empty);
+                }
+
+                foreach (string subData in data)
+                {
+                    list.Add(subData);
+                }
+
+                stateData.Add(list);
             }
+
+            List<List<string>>.Enumerator iterator = stateData.GetEnumerator();
+            while (iterator.MoveNext())
+            {
+                List<string> line = iterator.Current;
+                foreach (string data in line)
+                {
+                    Console.Write(data + " ");
+                }
+
+                Console.WriteLine();
+            }
+
+            return stateData.Count;
         }
     }
 }
