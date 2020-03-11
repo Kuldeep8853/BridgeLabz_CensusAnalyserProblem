@@ -18,7 +18,13 @@ namespace CensusAnalyserProblem
     /// </summary>
     public class CSVStateCensus : ICSVFileBuilder
     {
-        /// <inheritdoc/>
+        /// <summary>
+        /// StateLoadData method.
+        /// </summary>
+        /// <param name="filePath">filePath.</param>
+        /// <param name="delimiter">delimiter.</param>
+        /// <param name="header">header.</param>
+        /// <returns>Integer.</returns>
         public int StateLoadData(string filePath, string delimiter = ",", string header = "AreaInSqKm")
         {
             var file_total = File.ReadLines(filePath);
