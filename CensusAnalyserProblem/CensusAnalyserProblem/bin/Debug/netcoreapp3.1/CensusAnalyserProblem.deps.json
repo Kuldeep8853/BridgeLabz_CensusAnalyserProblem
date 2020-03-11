@@ -10,8 +10,7 @@
         "dependencies": {
           "CsvHelper": "15.0.1",
           "CsvReaderWriter": "0.7.0",
-          "LumenWorksCsvReader": "4.0.0",
-          "StyleCop.Analyzers": "1.2.0-beta.164"
+          "LumenWorksCsvReader": "4.0.0"
         },
         "runtime": {
           "CensusAnalyserProblem.dll": {}
@@ -44,13 +43,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {},
-      "StyleCop.Analyzers/1.2.0-beta.164": {
-        "dependencies": {
-          "StyleCop.Analyzers.Unstable": "1.2.0.164"
-        }
-      },
-      "StyleCop.Analyzers.Unstable/1.2.0.164": {}
+      "Microsoft.CSharp/4.5.0": {}
     }
   },
   "libraries": {
@@ -86,20 +79,6 @@
       "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
       "path": "microsoft.csharp/4.5.0",
       "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
-    },
-    "StyleCop.Analyzers/1.2.0-beta.164": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-IWMH8RyJGDu8ZrYFKIwjfcuXizpJnjnMGE8tDRnZ36AIAQeFDjeUPH2EUEMwj4+63oQBu/KkzRe9clSW9s5mdA==",
-      "path": "stylecop.analyzers/1.2.0-beta.164",
-      "hashPath": "stylecop.analyzers.1.2.0-beta.164.nupkg.sha512"
-    },
-    "StyleCop.Analyzers.Unstable/1.2.0.164": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3WJ5JvRP9QjdrwspeLFjwD2AZw2CcDmYLQ7x8oofxvOzXvboZdFlPsSV8h56hLyK0lnMFvtpb48nxz7oQ4RgCQ==",
-      "path": "stylecop.analyzers.unstable/1.2.0.164",
-      "hashPath": "stylecop.analyzers.unstable.1.2.0.164.nupkg.sha512"
     }
   }
 }
