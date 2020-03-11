@@ -13,15 +13,6 @@ namespace CensusAnalyserProblem
     using System.Linq;
 
     /// <summary>
-    /// DelegateCsvStateDataLoad delegate using methods encapsulating.
-    /// </summary>
-    /// <param name="filePath=">filePath.</param>
-    /// <param name="delimiter">Delimiter.</param>
-    /// <param name="header">Header.</param>
-    /// <returns>int type.</returns>
-    public delegate int DelegateCsvStateDataLoad(string filePath, string delimiter = ",", string header = "");
-
-    /// <summary>
     /// CSVState class.
     /// </summary>
     public class CSVState : ICSVFileBuilder

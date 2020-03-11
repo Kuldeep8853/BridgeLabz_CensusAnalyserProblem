@@ -7,10 +7,15 @@
 // ----------------------------------------------------------------------------------------------------------------------
 namespace CensusAnalyserProblem
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="builder">builder.</param>
+    /// <param name="filePath">filePath.</param>
+    /// <param name="delimiter">delimiter.</param>
+    /// <param name="header">header.</param>
+    /// <returns>Int type.</returns>
+    public delegate int DelegateCsvStateDataLoad(ICSVFileBuilder builder, string filePath, string delimiter = ",", string header = "");
     /// <summary>
     /// Builder class use like Directore of Project.
     /// </summary>
@@ -24,7 +29,7 @@ namespace CensusAnalyserProblem
         /// <param name="delimiter"></param>
         /// <param name="header"></param>
         /// <returns>result.</returns>
-        public int Construct1(ICSVFileBuilder builder, string filePath, string delimiter = ",", string header = "")
+        public  static int Construct(ICSVFileBuilder builder, string filePath, string delimiter = ",", string header = "")
         {
            int result = builder.StateLoadData(filePath, delimiter, header);
            return result;

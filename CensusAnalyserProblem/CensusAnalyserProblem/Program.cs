@@ -19,13 +19,10 @@ namespace CensusAnalyserProblem
         /// </summary>
         public static void Main()
         {
-            string path1 = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
-            Builder builder = new Builder();
+            string filePath = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
             Factory factory = new Factory();
-            builder.Construct1(factory.GetObjectCSVStateCensus(), path1, ",", "AreaInSqKm");
-            Console.WriteLine();
-            string path2 = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            builder.Construct1(factory.GetObjectCSVState(), path2, ",", "StateCode");
+            DelegateCsvStateDataLoad deleget=new DelegateCsvStateDataLoad(Builder.Construct);
+            deleget(factory.GetObjectCSVStateCensus(),filePath);
         }
     }
 }

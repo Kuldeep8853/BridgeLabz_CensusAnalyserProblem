@@ -8,7 +8,7 @@
 namespace CensusAnalyserProblem
 {
     using System;
-
+    
     /// <summary>
     /// Enum Containing Type of Exception mesaages.
     /// </summary>
