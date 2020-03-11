@@ -8,7 +8,7 @@
 namespace CensusAnalyserProblem
 {
     /// <summary>
-    /// 
+    /// Creating delegate and call the Builder method.
     /// </summary>
     /// <param name="builder">builder.</param>
     /// <param name="filePath">filePath.</param>
