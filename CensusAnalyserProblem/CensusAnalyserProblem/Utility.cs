@@ -52,7 +52,7 @@ namespace CensusAnalyserProblem
             {
                 for (int j = 0; j < stateArrary.Count - i - 1; j++)
                 {
-                    if ((int)stateArrary[j]["DensityPerSqKm"] < (int)stateArrary[j + 1]["DensityPerSqKm"])
+                    if ((int)stateArrary[j]["AreaInSqKm"] < (int)stateArrary[j + 1]["AreaInSqKm"])
                     {
                         count++;
                         var tamp = stateArrary[j + 1];
