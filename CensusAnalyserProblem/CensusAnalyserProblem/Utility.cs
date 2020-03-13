@@ -21,6 +21,7 @@ namespace CensusAnalyserProblem
     public class Utility
     {
         static int count;
+
         /// <summary>
         /// Method Convert Csv file to Json file.
         /// </summary>
@@ -51,7 +52,7 @@ namespace CensusAnalyserProblem
             {
                 for (int j = 0; j < stateArrary.Count - i - 1; j++)
                 {
-                    if (stateArrary[j]["Population"].ToString().CompareTo(stateArrary[j + 1]["Population"].ToString()) < 0)
+                    if ((int)stateArrary[j]["DensityPerSqKm"] < (int)stateArrary[j + 1]["DensityPerSqKm"])
                     {
                         count++;
                         var tamp = stateArrary[j + 1];
