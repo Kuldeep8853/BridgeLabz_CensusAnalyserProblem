@@ -95,7 +95,7 @@ namespace UnitTesting
             string path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
             Factory factory = new Factory();
             DelegateCsvStateDataLoad deleget = new DelegateCsvStateDataLoad(Builder.Construct);
-            string actual = deleget(factory.GetObjectCSVState(), path);
+            string actual = deleget(factory.GetObjectCSVStateCensus(), path);
             int expected = StateCensusAnalyser.CSVLoadData(path);
             Assert.AreEqual(expected.ToString(), actual);
         }
@@ -109,7 +109,7 @@ namespace UnitTesting
         {
             Factory factory = new Factory();
             DelegateCsvStateDataLoad deleget = new DelegateCsvStateDataLoad(Builder.Construct);
-            var ex = Assert.Throws<FileNotFoundException>(() => deleget(factory.GetObjectCSVState(), "Wrong_File_Path"));
+            var ex = Assert.Throws<FileNotFoundException>(() => deleget(factory.GetObjectCSVStateCensus(), "Wrong_File_Path"));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
 
@@ -123,7 +123,7 @@ namespace UnitTesting
             string path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.txt";
             Factory factory = new Factory();
             DelegateCsvStateDataLoad deleget = new DelegateCsvStateDataLoad(Builder.Construct);
-            var ex = Assert.Throws<FileNotFoundException>(() => deleget(factory.GetObjectCSVState(), path));
+            var ex = Assert.Throws<FileNotFoundException>(() => deleget(factory.GetObjectCSVStateCensus(), path));
             Assert.That(ex.Message, Is.EqualTo(CensusException.Wrong_File_Path.ToString()));
         }
 
@@ -137,7 +137,7 @@ namespace UnitTesting
             string path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
             Factory factory = new Factory();
             DelegateCsvStateDataLoad deleget = new DelegateCsvStateDataLoad(Builder.Construct);
-            var ex = Assert.Throws<CensusAnalyserException>(() => deleget(factory.GetObjectCSVState(), path, ";"));
+            var ex = Assert.Throws<CensusAnalyserException>(() => deleget(factory.GetObjectCSVStateCensus(), path, ";"));
             Assert.That(ex.Mgs, Is.EqualTo(CensusException.Wrong_Delimiter.ToString()));
         }
 
@@ -152,7 +152,7 @@ namespace UnitTesting
             string path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
             Factory factory = new Factory();
             DelegateCsvStateDataLoad deleget = new DelegateCsvStateDataLoad(Builder.Construct);
-            var ex = Assert.Throws<CensusAnalyserException>(() => deleget(factory.GetObjectCSVState(), path, ";", "Wrong_Header"));
+            var ex = Assert.Throws<CensusAnalyserException>(() => deleget(factory.GetObjectCSVStateCensus(), path, ";", "Wrong_Header"));
             Assert.That(ex.Mgs, Is.EqualTo(CensusException.Wrong_Header.ToString()));
         }
 

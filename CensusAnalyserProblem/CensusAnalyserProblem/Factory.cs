@@ -23,14 +23,5 @@ namespace CensusAnalyserProblem
         {
             return new CSVStateCensus();
         }
-
-        /// <summary>
-        /// Return CSVState object.
-        /// </summary>
-        /// <returns>return me.</returns>
-        public ICSVFileBuilder GetObjectCSVState()
-        {
-            return new CSVState();
-        }
     }
 }
