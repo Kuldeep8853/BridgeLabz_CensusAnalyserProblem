@@ -6,6 +6,8 @@
 // ----------------------------------------------------------------------------------------------------------------------
 namespace CensusAnalyserProblem
 {
+    using System;
+
     /// <summary>
     /// This is main class of CensusAnalyserProblem Project.
     /// </summary>
@@ -16,11 +18,9 @@ namespace CensusAnalyserProblem
         /// </summary>
         public static void Main()
         {
-            string cSVFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv";
-            string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVState.json";
-            Utility.ConvertCsvFileToJsonObject(cSVFilePath, jsonFilePath);
-            Utility.SortStateCode(jsonFilePath);
-            Utility.PrintJsonFile(jsonFilePath);
+            string path = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
+            CSVStateCensus cSVState = new CSVStateCensus();
+            cSVState.StateLoadData(path);
         }
     }
 }

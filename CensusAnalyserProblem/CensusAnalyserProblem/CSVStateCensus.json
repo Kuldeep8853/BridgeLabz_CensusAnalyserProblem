@@ -8,8 +8,8 @@
   {
     "State": "Arunachal Pradesh",
     "Population": 1382611,
-    "AreaInSqKm": 0,
-    "DensityPerSqKm": 0
+    "AreaInSqKm": null,
+    "DensityPerSqKm": null
   },
   {
     "State": "Assam",

@@ -10,8 +10,6 @@ namespace CensusAnalyserProblem
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Text;
-    using ChoETL;
 
     /// <summary>
     /// CSVState class.
@@ -34,39 +32,41 @@ namespace CensusAnalyserProblem
                 throw new CensusAnalyserException(CensusException.Wrong_Header + string.Empty);
             }
 
-            List<List<string>> stateData = new List<List<string>>();
-            foreach (var line in File.ReadLines(filePath))
+            int k = 1;
+            Dictionary<int, Dictionary<string, string>> map = new Dictionary<int, Dictionary<string, string>>();
+            string[] key = line_element[0].Split(delimiter);
+            if (key.Length < 2)
             {
-                List<string> list = new List<string>();
-
-                // process line here
-                string[] data = line.Split(delimiter);
-                if (data.Length < 2)
-                {
-                    throw new CensusAnalyserException(CensusException.Wrong_Delimiter + string.Empty);
-                }
-
-                foreach (string subData in data)
-                {
-                    list.Add(subData);
-                }
-
-                stateData.Add(list);
+                throw new CensusAnalyserException(CensusException.Wrong_Delimiter + string.Empty);
             }
 
-            List<List<string>>.Enumerator iterator = stateData.GetEnumerator();
-            while (iterator.MoveNext())
+            for (int i = 1; i < line_element.Length; i++)
             {
-                List<string> line = iterator.Current;
-                foreach (string data in line)
-                {
-                    Console.Write(data + " ");
-                }
+               string[] value = line_element[i].Split(",");
+               Dictionary<string, string> subMap = new Dictionary<string, string>()
+               {
+                   { key[0], value[0] },
+                   { key[1], value[1] },
+                   { key[2], value[2] },
+                   { key[3], value[3] },
+               };
 
-                Console.WriteLine();
+               map.Add(k, subMap);
+               k++;
             }
 
-            return stateData.Count;
+            foreach (var data in map)
+            {
+                Console.WriteLine("{");
+                foreach (var data1 in data.Value)
+                {
+                    Console.WriteLine(data1);
+                }
+
+                Console.WriteLine("},");
+            }
+
+            return map.Count;
         }
     }
 }

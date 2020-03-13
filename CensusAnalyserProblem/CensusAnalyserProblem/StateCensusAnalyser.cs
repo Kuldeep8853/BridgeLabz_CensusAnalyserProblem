@@ -23,7 +23,7 @@ namespace CensusAnalyserProblem
         {
             var line = File.ReadLines(filePath);
             string[] data = line.ToArray();
-            return data.Length;
+            return data.Length-1;
         }
     }
 }
