@@ -75,5 +75,32 @@ namespace CensusAnalyserProblem
                 Console.WriteLine(stateArrary[i]);
             }
         }
+
+        /// <summary>
+        /// Return The first element  state name of Json Array.
+        /// </summary>
+        /// <param name="path">path.</param>
+        /// <param name="elementName">elementName.</param>
+        /// <returns>string.</returns>
+        public static string FirstElementNameOfJsonArray(string path, string elementName)
+        {
+            string json = File.ReadAllText(path);
+            JArray stateArrary = JArray.Parse(json);
+            return stateArrary[0][elementName].ToString();
+        }
+
+        /// <summary>
+        /// Return The first element  state name of Json Array.
+        /// </summary>
+        /// <param name="path">path.</param>
+        /// <param name="elementName">elementName.</param>
+        /// <returns>string.</returns>
+        public static string LastElementNameOfJsonArray(string path, string elementName)
+        {
+            string json = File.ReadAllText(path);
+            JArray stateArrary = JArray.Parse(json);
+            int length = stateArrary.Count;
+            return stateArrary[length - 1][elementName].ToString();
+        }
     }
 }

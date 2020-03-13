@@ -145,6 +145,7 @@ namespace UnitTesting
         /// Test Case 2.5
         /// throw the exception if wrong header pass.
         /// </summary>
+
         [Test]
         public void Pass_Wrong_Header_File_ThrowException1()
         {
@@ -153,6 +154,54 @@ namespace UnitTesting
             DelegateCsvStateDataLoad deleget = new DelegateCsvStateDataLoad(Builder.Construct);
             var ex = Assert.Throws<CensusAnalyserException>(() => deleget(factory.GetObjectCSVState(), path, ";", "Wrong_Header"));
             Assert.That(ex.Mgs, Is.EqualTo(CensusException.Wrong_Header.ToString()));
+        }
+
+        /// <summary>
+        /// Test Case 3.1
+        /// </summary>
+        [Test]
+        public void Comparing_FistStateCensus_Name()
+        {
+            string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
+            string actual = Utility.FirstElementNameOfJsonArray(jsonFilePath, "State");
+            string expected = "Andhra Pradesh";
+            Assert.AreEqual(actual, expected);
+        }
+
+        /// <summary>
+        /// Test case 3.2
+        /// </summary>
+        [Test]
+        public void Comparing_LastStateCensus_Name()
+        {
+            string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
+            string actual = Utility.LastElementNameOfJsonArray(jsonFilePath, "State");
+            string expected = "West Bengal";
+            Assert.AreEqual(actual, expected);
+        }
+
+        /// <summary>
+        /// Test Case 4.1
+        /// </summary>
+        [Test]
+        public void Comparing_FistStateCode_Name()
+        {
+            string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVState.json";
+            string actual = Utility.FirstElementNameOfJsonArray(jsonFilePath, "StateName");
+            string expected = "Andhra Pradesh New";
+            Assert.AreEqual(actual, expected);
+        }
+
+        /// <summary>
+        /// Test case 4.2
+        /// </summary>
+        [Test]
+        public void Comparing_LastStateCode_Name()
+        {
+            string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVState.json";
+            string actual = Utility.LastElementNameOfJsonArray(jsonFilePath, "StateName");
+            string expected = "West Bengal";
+            Assert.AreEqual(actual, expected);
         }
     }
 }
