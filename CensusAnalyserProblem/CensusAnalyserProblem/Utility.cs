@@ -59,5 +59,30 @@ namespace CensusAnalyserProblem
 
             return stateArrary;
         }
+
+        /// <summary>
+        /// Sorting fuction for sort json file.
+        /// </summary>
+        /// <param name="path">path.</param>
+        /// <returns>JArray.</returns>
+        public static JArray SortStateCode(string path)
+        {
+            string json = File.ReadAllText(path);
+            JArray stateArrary = JArray.Parse(json);
+            for (int i = 0; i < stateArrary.Count - 1; i++)
+            {
+                for (int j = 0; j < stateArrary.Count - i - 1; j++)
+                {
+                    if (stateArrary[j]["StateCode"].ToString().CompareTo(stateArrary[j + 1]["StateCode"].ToString()) > 0)
+                    {
+                        var tamp = stateArrary[j + 1];
+                        stateArrary[j + 1] = stateArrary[j];
+                        stateArrary[j] = tamp;
+                    }
+                }
+            }
+
+            return stateArrary;
+        }
     }
 }
