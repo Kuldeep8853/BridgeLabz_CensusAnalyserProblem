@@ -38,3 +38,14 @@ D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\VisioForge.Shared.dll
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\VisioForge.Tools.dll
 D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\VisioForge.Types.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\NPOI.OOXML.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\NPOI.OpenXml4Net.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\NPOI.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
+D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll

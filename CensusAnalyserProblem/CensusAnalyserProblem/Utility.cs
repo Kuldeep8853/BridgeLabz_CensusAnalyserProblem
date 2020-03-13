@@ -13,12 +13,14 @@ namespace CensusAnalyserProblem
     using ChoETL;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+    using NPOI.SS.Formula.Functions;
 
     /// <summary>
     /// Utility class for using in CensusAnalyzerProblem.
     /// </summary>
     public class Utility
     {
+        static int count;
         /// <summary>
         /// Method Convert Csv file to Json file.
         /// </summary>
@@ -41,7 +43,7 @@ namespace CensusAnalyserProblem
         /// Method for sorting json File.
         /// </summary>
         /// <param name="path">path.</param>
-        public static void SortStateCode(string path)
+        public static void SortStatePopulation(string path)
         {
             string json = File.ReadAllText(path);
             JArray stateArrary = JArray.Parse(json);
@@ -49,8 +51,9 @@ namespace CensusAnalyserProblem
             {
                 for (int j = 0; j < stateArrary.Count - i - 1; j++)
                 {
-                    if (stateArrary[j]["StateCode"].ToString().CompareTo(stateArrary[j + 1]["StateCode"].ToString()) > 0)
+                    if (stateArrary[j]["Population"].ToString().CompareTo(stateArrary[j + 1]["Population"].ToString()) < 0)
                     {
+                        count++;
                         var tamp = stateArrary[j + 1];
                         stateArrary[j + 1] = stateArrary[j];
                         stateArrary[j] = tamp;
@@ -60,6 +63,7 @@ namespace CensusAnalyserProblem
 
             string jsonF = JsonConvert.SerializeObject(stateArrary, Formatting.Indented);
             File.WriteAllText(path, jsonF);
+            Console.WriteLine(count);
         }
 
         /// <summary>
