@@ -6,9 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ChoETL" Version="1.1.0.5" />
+    <PackageReference Include="ChoETL.JSON" Version="1.1.0.5" />
     <PackageReference Include="CsvHelper" Version="15.0.1" />
     <PackageReference Include="CsvReaderWriter" Version="0.7.0" />
     <PackageReference Include="LumenWorksCsvReader" Version="4.0.0" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.164">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="VisioForge.DotNet.Core.TRIAL" Version="11.4.7" />
   </ItemGroup>
 
 </Project>

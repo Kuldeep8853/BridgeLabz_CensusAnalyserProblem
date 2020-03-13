@@ -38,6 +38,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "ChoETL": {
+              "target": "Package",
+              "version": "[1.1.0.5, )"
+            },
+            "ChoETL.JSON": {
+              "target": "Package",
+              "version": "[1.1.0.5, )"
+            },
             "CsvHelper": {
               "target": "Package",
               "version": "[15.0.1, )"
@@ -49,6 +57,24 @@
             "LumenWorksCsvReader": {
               "target": "Package",
               "version": "[4.0.0, )"
+            },
+            "Nancy": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.164, )"
+            },
+            "VisioForge.DotNet.Core.TRIAL": {
+              "target": "Package",
+              "version": "[11.4.7, )"
             }
           },
           "imports": [

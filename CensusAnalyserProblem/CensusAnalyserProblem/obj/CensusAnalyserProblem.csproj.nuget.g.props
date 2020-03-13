@@ -12,4 +12,8 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgVisioForge_DotNet_Core_TRIAL Condition=" '$(PkgVisioForge_DotNet_Core_TRIAL)' == '' ">C:\Users\ye10394\.nuget\packages\visioforge.dotnet.core.trial\11.4.7</PkgVisioForge_DotNet_Core_TRIAL>
+    <PkgStyleCop_Analyzers_Unstable Condition=" '$(PkgStyleCop_Analyzers_Unstable)' == '' ">C:\Users\ye10394\.nuget\packages\stylecop.analyzers.unstable\1.2.0.164</PkgStyleCop_Analyzers_Unstable>
+  </PropertyGroup>
 </Project>

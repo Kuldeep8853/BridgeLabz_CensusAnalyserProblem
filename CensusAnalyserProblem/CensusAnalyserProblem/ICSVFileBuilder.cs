@@ -6,10 +6,6 @@
 //// ----------------------------------------------------------------------------------------------------------------------
 namespace CensusAnalyserProblem
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     /// <summary>
     /// ICSVFileBuilder is Interface.
     /// </summary>
