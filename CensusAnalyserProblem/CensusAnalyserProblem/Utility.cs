@@ -7,9 +7,11 @@
 
 namespace CensusAnalyserProblem
 {
+    using System;
     using System.IO;
     using System.Text;
     using ChoETL;
+    using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -36,11 +38,10 @@ namespace CensusAnalyserProblem
         }
 
         /// <summary>
-        /// Sorting fuction for sort json file.
+        /// Method for sorting json File.
         /// </summary>
         /// <param name="path">path.</param>
-        /// <returns>JArray.</returns>
-        public static JArray SortStateCode(string path)
+        public static void SortStateCode(string path)
         {
             string json = File.ReadAllText(path);
             JArray stateArrary = JArray.Parse(json);
@@ -57,7 +58,22 @@ namespace CensusAnalyserProblem
                 }
             }
 
-            return stateArrary;
+            string jsonF = JsonConvert.SerializeObject(stateArrary, Formatting.Indented);
+            File.WriteAllText(path, jsonF);
+        }
+
+        /// <summary>
+        /// Print the json file.
+        /// </summary>
+        /// <param name="path">path.</param>
+        public static void PrintJsonFile(string path)
+        {
+            string json = File.ReadAllText(path);
+            JArray stateArrary = JArray.Parse(json);
+            for (int i = 0; i < stateArrary.Count; i++)
+            {
+                Console.WriteLine(stateArrary[i]);
+            }
         }
     }
 }
