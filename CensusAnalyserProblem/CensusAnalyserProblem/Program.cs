@@ -21,6 +21,12 @@ namespace CensusAnalyserProblem
         /// </summary>
         public static void Main()
         {
+            string cSVFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv";
+            string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
+            Utility.ConvertCsvFileToJsonObject(cSVFilePath, jsonFilePath);
+            JArray stateArray=Utility.SortCensus(jsonFilePath);
+            string json = JsonConvert.SerializeObject(stateArray, Formatting.Indented);
+            File.WriteAllText(jsonFilePath, json);
         }
     }
 }
