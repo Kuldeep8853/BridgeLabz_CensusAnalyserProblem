@@ -18,8 +18,10 @@ namespace CensusAnalyserProblem
         /// </summary>
         public static void Main()
         {
-            string jsonPath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
-            Utility.SortStatePopulation(jsonPath);
+            // string jsonPath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
+            // Utility.SortStatePopulation(jsonPath);
+            CSVStateCensus cSVStateCensus = new CSVStateCensus();
+            cSVStateCensus.StateLoadData(@"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv");
         }
     }
 }

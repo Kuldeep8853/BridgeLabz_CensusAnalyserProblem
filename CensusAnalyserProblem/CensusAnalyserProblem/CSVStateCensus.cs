@@ -41,6 +41,7 @@ namespace CensusAnalyserProblem
                 throw new CensusAnalyserException(CensusException.Wrong_Delimiter + string.Empty);
             }
 
+            Utility.SortCSVFile(line_element);
             for (int i = 1; i < line_element.Length; i++)
             {
                 string[] value = line_element[i].Split(delimiter);

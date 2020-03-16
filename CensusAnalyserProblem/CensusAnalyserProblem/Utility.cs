@@ -107,5 +107,25 @@ namespace CensusAnalyserProblem
             int length = stateArrary.Count;
             return stateArrary[length - 1][elementName].ToString();
         }
+
+        /// <summary>
+        /// Sort the csv file.
+        /// </summary>
+        /// <param name="lines">filePath.</param>
+        public static void SortCSVFile(string[] lines)
+        {
+            for (int i = 0; i < lines.Length - 1; i++)
+            {
+                for (int j = 1; j < lines.Length - i - 1; j++)
+                {
+                    if (lines[j - 1].CompareTo(lines[j + 1]) > 0)
+                    {
+                        string tamp = lines[j];
+                        lines[j] = lines[j + 1];
+                        lines[j + 1] = tamp;
+                    }
+                }
+            }
+        }
     }
 }
