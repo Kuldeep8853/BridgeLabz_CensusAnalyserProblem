@@ -13,7 +13,6 @@ namespace CensusAnalyserProblem
     using ChoETL;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
-    using NPOI.SS.Formula.Functions;
 
     /// <summary>
     /// Utility class for using in CensusAnalyzerProblem.
@@ -35,6 +34,7 @@ namespace CensusAnalyserProblem
             {
                 using var w = new ChoJSONWriter(sb);
                 w.Write(p);
+                w.Close();
             }
 
             File.WriteAllText(jsonFile, sb.ToString());
