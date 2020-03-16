@@ -1,5 +1,23 @@
 [
   {
+    "State": "Uttar Pradesh",
+    "Population": 199812341,
+    "AreaInSqKm": 240928,
+    "DensityPerSqKm": 828
+  },
+  {
+    "State": "Maharashta",
+    "Population": 112372972,
+    "AreaInSqKm": 307713,
+    "DensityPerSqKm": 365
+  },
+  {
+    "State": "Bihar",
+    "Population": 103804637,
+    "AreaInSqKm": 94163,
+    "DensityPerSqKm": 1102
+  },
+  {
     "State": "West Bengal",
     "Population": 91347736,
     "AreaInSqKm": 88752,
@@ -18,12 +36,6 @@
     "DensityPerSqKm": 555
   },
   {
-    "State": "Himachal Pradesh",
-    "Population": 6864602,
-    "AreaInSqKm": 55673,
-    "DensityPerSqKm": 123
-  },
-  {
     "State": "Rajasthan",
     "Population": 68621012,
     "AreaInSqKm": 342239,
@@ -34,12 +46,6 @@
     "Population": 61130704,
     "AreaInSqKm": 191791,
     "DensityPerSqKm": 319
-  },
-  {
-    "State": "Sikkim",
-    "Population": 607688,
-    "AreaInSqKm": 7096,
-    "DensityPerSqKm": 86
   },
   {
     "State": "Gujarat",
@@ -58,12 +64,6 @@
     "Population": 41947358,
     "AreaInSqKm": 155707,
     "DensityPerSqKm": 269
-  },
-  {
-    "State": "Tripura",
-    "Population": 3671032,
-    "AreaInSqKm": 10486,
-    "DensityPerSqKm": 350
   },
   {
     "State": "Telangana",
@@ -90,22 +90,10 @@
     "DensityPerSqKm": 397
   },
   {
-    "State": "Meghalaya",
-    "Population": 2964007,
-    "AreaInSqKm": 22429,
-    "DensityPerSqKm": 132
-  },
-  {
     "State": "Punjab",
     "Population": 27704236,
     "AreaInSqKm": 50362,
     "DensityPerSqKm": 550
-  },
-  {
-    "State": "Manipur",
-    "Population": 2721756,
-    "AreaInSqKm": 22327,
-    "DensityPerSqKm": 122
   },
   {
     "State": "Chattisgarh",
@@ -120,10 +108,40 @@
     "DensityPerSqKm": 573
   },
   {
-    "State": "Uttar Pradesh",
-    "Population": 199812341,
-    "AreaInSqKm": 240928,
-    "DensityPerSqKm": 828
+    "State": "Jammu and Kashmir",
+    "Population": 12548926,
+    "AreaInSqKm": 222236,
+    "DensityPerSqKm": 57
+  },
+  {
+    "State": "Uttarakhand",
+    "Population": 10116752,
+    "AreaInSqKm": 53483,
+    "DensityPerSqKm": 189
+  },
+  {
+    "State": "Himachal Pradesh",
+    "Population": 6864602,
+    "AreaInSqKm": 55673,
+    "DensityPerSqKm": 123
+  },
+  {
+    "State": "Tripura",
+    "Population": 3671032,
+    "AreaInSqKm": 10486,
+    "DensityPerSqKm": 350
+  },
+  {
+    "State": "Meghalaya",
+    "Population": 2964007,
+    "AreaInSqKm": 22429,
+    "DensityPerSqKm": 132
+  },
+  {
+    "State": "Manipur",
+    "Population": 2721756,
+    "AreaInSqKm": 22327,
+    "DensityPerSqKm": 122
   },
   {
     "State": "Nagaland",
@@ -144,33 +162,15 @@
     "DensityPerSqKm": null
   },
   {
-    "State": "Jammu and Kashmir",
-    "Population": 12548926,
-    "AreaInSqKm": 222236,
-    "DensityPerSqKm": 57
-  },
-  {
-    "State": "Maharashta",
-    "Population": 112372972,
-    "AreaInSqKm": 307713,
-    "DensityPerSqKm": 365
-  },
-  {
     "State": "Mizoram",
     "Population": 1091014,
     "AreaInSqKm": 21081,
     "DensityPerSqKm": 52
   },
   {
-    "State": "Bihar",
-    "Population": 103804637,
-    "AreaInSqKm": 94163,
-    "DensityPerSqKm": 1102
-  },
-  {
-    "State": "Uttarakhand",
-    "Population": 10116752,
-    "AreaInSqKm": 53483,
-    "DensityPerSqKm": 189
+    "State": "Sikkim",
+    "Population": 607688,
+    "AreaInSqKm": 7096,
+    "DensityPerSqKm": 86
   }
 ]
