@@ -3,7 +3,7 @@
 //   Copyright © 2020 Company="BridgeLabz"
 // </copyright>
 // <creator name="Kuldeep Kasaudhan"/>
-// ----------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 
 namespace CensusAnalyserProblem
 {
@@ -21,7 +21,8 @@ namespace CensusAnalyserProblem
         /// Load data in Dictionary.
         /// </summary>
         /// <param name="filePath">filePath.</param>
-        public static void LoadUsCensusData(string filePath)
+        /// <returns>int.</returns>
+        public static int LoadUsCensusData(string filePath)
         {
             int k = 1;
             var file_total = File.ReadLines(filePath);
@@ -58,7 +59,7 @@ namespace CensusAnalyserProblem
                 Console.WriteLine("},");
             }
 
-            Console.WriteLine(map.Count);
+            return map.Count;
         }
     }
 }
