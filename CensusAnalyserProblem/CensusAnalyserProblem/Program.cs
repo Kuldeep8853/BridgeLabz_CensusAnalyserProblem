@@ -18,8 +18,8 @@ namespace CensusAnalyserProblem
         /// </summary>
         public static void Main()
         {
-            string jsonPath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
-            Utility.SortStatePopulation(jsonPath);
+            DAOClass ado = new DAOClass();
+            ado.Register(@"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json");
         }
     }
 }

@@ -158,8 +158,8 @@
   {
     "State": "Arunachal Pradesh",
     "Population": 1382611,
-    "AreaInSqKm": null,
-    "DensityPerSqKm": null
+    "AreaInSqKm": 0,
+    "DensityPerSqKm": 0
   },
   {
     "State": "Mizoram",
