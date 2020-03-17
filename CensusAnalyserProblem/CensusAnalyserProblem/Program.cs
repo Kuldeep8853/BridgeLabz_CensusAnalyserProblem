@@ -3,10 +3,13 @@
 //   Copyright © 2020 Company="BridgeLabz"
 // </copyright>
 // <creator name="Kuldeep Kasaudhan"/>
-// ----------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 namespace CensusAnalyserProblem
 {
     using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
 
     /// <summary>
     /// This is main class of CensusAnalyserProblem Project.
@@ -18,11 +21,21 @@ namespace CensusAnalyserProblem
         /// </summary>
         public static void Main()
         {
-            // string jsonPath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
-            // Utility.SortStatePopulation(jsonPath);
-            // CSVStateCensus cSVStateCensus = new CSVStateCensus();
-            // cSVStateCensus.StateLoadData(@"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv");
-            USCensusData.LoadUsCensusData(@"D:\BridgeLabz_CensusAnalyserProblem\USCensusData.csv");
+            // Utility.SortStatePopulation(@"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVState.json");
+            //var file_total = File.ReadLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv");
+            //Dictionary<int, StateCodeDataDAO> map = new Dictionary<int, StateCodeDataDAO>();
+            //string[] line_element = file_total.ToArray();
+            //for (int i = 1; i < line_element.Length; i++)
+            //{
+            //    StateCodeDataDAO node = StateCodeDataDAO.CreateNode(line_element[i]);
+            //    map.Add(i, node);
+            //}
+
+            //foreach (KeyValuePair<int, StateCodeDataDAO> data in map)
+            //{
+            //    Console.WriteLine(data.Value.ToString());
+            //}
+            Utility.MergeStateCensusAndStateCode();
         }
     }
 }

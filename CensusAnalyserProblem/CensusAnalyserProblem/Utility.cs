@@ -8,7 +8,9 @@
 namespace CensusAnalyserProblem
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using System.Text;
     using ChoETL;
     using Newtonsoft.Json;
@@ -19,7 +21,7 @@ namespace CensusAnalyserProblem
     /// </summary>
     public class Utility
     {
-        static int count;
+        private static int count;
 
         /// <summary>
         /// Method Convert Csv file to Json file.
@@ -52,7 +54,7 @@ namespace CensusAnalyserProblem
             {
                 for (int j = 0; j < stateArrary.Count - i - 1; j++)
                 {
-                    if ((int)stateArrary[j]["AreaInSqKm"] < (int)stateArrary[j + 1]["AreaInSqKm"])
+                    if (stateArrary[j]["StateName"].ToString().CompareTo(stateArrary[j + 1]["StateName"].ToString()) > 0)
                     {
                         count++;
                         var tamp = stateArrary[j + 1];
@@ -125,6 +127,45 @@ namespace CensusAnalyserProblem
                         lines[j + 1] = tamp;
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Merge the state cde data and state census data.
+        /// </summary>
+        public static void MergeStateCensusAndStateCode()
+        {
+            var file_total = File.ReadLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv");
+            var file_total1 = File.ReadLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv");
+            Dictionary<int, List<string>> map = new Dictionary<int, List<string>>();
+            string[] line_element = file_total.ToArray();
+            string[] line_element1 = file_total1.ToArray();
+            for (int i = 1; i < line_element1.Length; i++)
+            {
+                List<string> list = new List<string>();
+                StateCodeDataDAO node = StateCodeDataDAO.CreateNode(line_element[i]);
+                StateCensusDataDAO node1 = StateCensusDataDAO.CreateNode(line_element1[i]);
+                list.Add(node.serialNo.ToString());
+                list.Add(node.stateCode);
+                list.Add(node.stateName);
+                list.Add(node.tIN.ToString());
+                list.Add(node1.population.ToString());
+                list.Add(node1.areaInSqKm.ToString());
+                list.Add(node1.densityPerSqKm.ToString());
+                map.Add(i, list);
+            }
+
+            foreach (var data in map)
+            {
+                Console.WriteLine("{ ");
+                Console.WriteLine("SerialNo: " + data.Value[0]);
+                Console.WriteLine("StateCode: " + data.Value[1]);
+                Console.WriteLine("StateName: " + data.Value[2]);
+                Console.WriteLine("TIN: " + data.Value[3]);
+                Console.WriteLine("Population: " + data.Value[4]);
+                Console.WriteLine("AreaInSqKm: " + data.Value[5]);
+                Console.WriteLine("DensityPerSqKm: " + data.Value[6]);
+                Console.WriteLine(" },");
             }
         }
     }
