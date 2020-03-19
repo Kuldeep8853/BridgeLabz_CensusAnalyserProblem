@@ -154,7 +154,7 @@ namespace CensusAnalyserProblem
             }
 
             string indiajsonPath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\IndianCensusData.json";
-            var json = JsonConvert.SerializeObject(indiaData, Formatting.Indented);
+            var json = JsonConvert.SerializeObject(indiaData.Values, Formatting.Indented);
             File.WriteAllText(indiajsonPath, json);
             string jsonObj = File.ReadAllText(indiajsonPath);
             var jsonArray = JsonConvert.DeserializeObject(jsonObj);

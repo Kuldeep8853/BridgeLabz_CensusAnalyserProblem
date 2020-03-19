@@ -1,11 +1,11 @@
-{
-  "1": {
+[
+  {
     "SrNo": "1",
     "StateName": "Andaman and Nicobar Islands",
     "TIN": "35",
     "StateCode": "AN"
   },
-  "2": {
+  {
     "SrNo": "2",
     "Population": "49386799",
     "StateName": "Andhra Pradesh",
@@ -14,13 +14,13 @@
     "DensityPerSqKm": "303",
     "StateCode": "AP"
   },
-  "3": {
+  {
     "SrNo": "3",
     "StateName": "Andhra Pradesh New",
     "TIN": "37",
     "StateCode": "AD"
   },
-  "4": {
+  {
     "SrNo": "4",
     "Population": "1382611",
     "StateName": "Arunachal Pradesh",
@@ -29,7 +29,7 @@
     "DensityPerSqKm": "0",
     "StateCode": "AR"
   },
-  "5": {
+  {
     "SrNo": "5",
     "Population": "31169272",
     "StateName": "Assam",
@@ -38,7 +38,7 @@
     "DensityPerSqKm": "397",
     "StateCode": "AS"
   },
-  "6": {
+  {
     "SrNo": "6",
     "Population": "103804637",
     "StateName": "Bihar",
@@ -47,13 +47,13 @@
     "DensityPerSqKm": "1102",
     "StateCode": "BH"
   },
-  "7": {
+  {
     "SrNo": "7",
     "StateName": "Chandigarh",
     "TIN": "04",
     "StateCode": "CH"
   },
-  "8": {
+  {
     "SrNo": "8",
     "Population": "25540196",
     "StateName": "Chattisgarh",
@@ -62,25 +62,25 @@
     "DensityPerSqKm": "189",
     "StateCode": "CT"
   },
-  "9": {
+  {
     "SrNo": "9",
     "StateName": "Dadra and Nagar Haveli",
     "TIN": "26",
     "StateCode": "DN"
   },
-  "10": {
+  {
     "SrNo": "10",
     "StateName": "Daman and Diu",
     "TIN": "25",
     "StateCode": "DD"
   },
-  "11": {
+  {
     "SrNo": "11",
     "StateName": "Delhi",
     "TIN": "07",
     "StateCode": "DL"
   },
-  "12": {
+  {
     "SrNo": "12",
     "Population": "1457723",
     "StateName": "Goa",
@@ -89,7 +89,7 @@
     "DensityPerSqKm": "394",
     "StateCode": "GA"
   },
-  "13": {
+  {
     "SrNo": "13",
     "Population": "60383628",
     "StateName": "Gujarat",
@@ -98,7 +98,7 @@
     "DensityPerSqKm": "308",
     "StateCode": "GJ"
   },
-  "14": {
+  {
     "SrNo": "14",
     "Population": "25353081",
     "StateName": "Haryana",
@@ -107,7 +107,7 @@
     "DensityPerSqKm": "573",
     "StateCode": "HR"
   },
-  "15": {
+  {
     "SrNo": "15",
     "Population": "6864602",
     "StateName": "Himachal Pradesh",
@@ -116,7 +116,7 @@
     "DensityPerSqKm": "123",
     "StateCode": "HP"
   },
-  "16": {
+  {
     "SrNo": "16",
     "Population": "12548926",
     "StateName": "Jammu and Kashmir",
@@ -125,7 +125,7 @@
     "DensityPerSqKm": "57",
     "StateCode": "JK"
   },
-  "17": {
+  {
     "SrNo": "17",
     "Population": "32966238",
     "StateName": "Jharkhand",
@@ -134,7 +134,7 @@
     "DensityPerSqKm": "414",
     "StateCode": "JH"
   },
-  "18": {
+  {
     "SrNo": "18",
     "Population": "61130704",
     "StateName": "Karnataka",
@@ -143,7 +143,7 @@
     "DensityPerSqKm": "319",
     "StateCode": "KA"
   },
-  "19": {
+  {
     "SrNo": "19",
     "Population": "33387677",
     "StateName": "Kerala",
@@ -152,13 +152,13 @@
     "DensityPerSqKm": "859",
     "StateCode": "KL"
   },
-  "20": {
+  {
     "SrNo": "20",
     "StateName": "Lakshadweep Islands",
     "TIN": "31",
     "StateCode": "LD"
   },
-  "21": {
+  {
     "SrNo": "21",
     "Population": "72597565",
     "StateName": "Madhya Pradesh",
@@ -167,13 +167,13 @@
     "DensityPerSqKm": "236",
     "StateCode": "MP"
   },
-  "22": {
+  {
     "SrNo": "22",
     "StateName": "Maharashtra",
     "TIN": "27",
     "StateCode": "MH"
   },
-  "23": {
+  {
     "SrNo": "23",
     "Population": "2721756",
     "StateName": "Manipur",
@@ -182,7 +182,7 @@
     "DensityPerSqKm": "122",
     "StateCode": "MN"
   },
-  "24": {
+  {
     "SrNo": "24",
     "Population": "2964007",
     "StateName": "Meghalaya",
@@ -191,7 +191,7 @@
     "DensityPerSqKm": "132",
     "StateCode": "ME"
   },
-  "25": {
+  {
     "SrNo": "25",
     "Population": "1091014",
     "StateName": "Mizoram",
@@ -200,7 +200,7 @@
     "DensityPerSqKm": "52",
     "StateCode": "MI"
   },
-  "26": {
+  {
     "SrNo": "26",
     "Population": "1980602",
     "StateName": "Nagaland",
@@ -209,7 +209,7 @@
     "DensityPerSqKm": "119",
     "StateCode": "NL"
   },
-  "27": {
+  {
     "SrNo": "27",
     "Population": "41947358",
     "StateName": "Odisha",
@@ -218,13 +218,13 @@
     "DensityPerSqKm": "269",
     "StateCode": "OR"
   },
-  "28": {
+  {
     "SrNo": "28",
     "StateName": "Pondicherry",
     "TIN": "34",
     "StateCode": "PY"
   },
-  "29": {
+  {
     "SrNo": "29",
     "Population": "27704236",
     "StateName": "Punjab",
@@ -233,7 +233,7 @@
     "DensityPerSqKm": "550",
     "StateCode": "PB"
   },
-  "30": {
+  {
     "SrNo": "30",
     "Population": "68621012",
     "StateName": "Rajasthan",
@@ -242,7 +242,7 @@
     "DensityPerSqKm": "201",
     "StateCode": "RJ"
   },
-  "31": {
+  {
     "SrNo": "31",
     "Population": "607688",
     "StateName": "Sikkim",
@@ -251,7 +251,7 @@
     "DensityPerSqKm": "86",
     "StateCode": "SK"
   },
-  "32": {
+  {
     "SrNo": "32",
     "Population": "72138958",
     "StateName": "Tamil Nadu",
@@ -260,7 +260,7 @@
     "DensityPerSqKm": "555",
     "StateCode": "TN"
   },
-  "33": {
+  {
     "SrNo": "33",
     "Population": "35286757",
     "StateName": "Telangana",
@@ -269,7 +269,7 @@
     "DensityPerSqKm": "307",
     "StateCode": "TS"
   },
-  "34": {
+  {
     "SrNo": "34",
     "Population": "3671032",
     "StateName": "Tripura",
@@ -278,7 +278,7 @@
     "DensityPerSqKm": "350",
     "StateCode": "TR"
   },
-  "35": {
+  {
     "SrNo": "35",
     "Population": "199812341",
     "StateName": "Uttar Pradesh",
@@ -287,7 +287,7 @@
     "DensityPerSqKm": "828",
     "StateCode": "UP"
   },
-  "36": {
+  {
     "SrNo": "36",
     "Population": "10116752",
     "StateName": "Uttarakhand",
@@ -296,7 +296,7 @@
     "DensityPerSqKm": "189",
     "StateCode": "UT"
   },
-  "37": {
+  {
     "SrNo": "37",
     "Population": "91347736",
     "StateName": "West Bengal",
@@ -305,4 +305,4 @@
     "DensityPerSqKm": "1029",
     "StateCode": "WB"
   }
-}
+]
