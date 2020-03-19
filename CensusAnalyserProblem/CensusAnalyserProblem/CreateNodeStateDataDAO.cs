@@ -140,4 +140,74 @@ namespace CensusAnalyserProblem
             }
         }
     }
+
+    /// <summary>
+    /// Modal class for UsStateCensusData file.
+    /// </summary>
+    public class UsStateCensusDataDAO
+    {
+        /// <summary>
+        /// Gets or sets state id.
+        /// </summary>
+        public string StateId { get; set; }
+
+        /// <summary>
+        /// Gets or sets state name.
+        /// </summary>
+        public string State { get; set; }
+
+        /// <summary>
+        /// Gets or sets state population.
+        /// </summary>
+        public string Population { get; set; }
+
+        /// <summary>
+        /// Gets or sets housing Units.
+        /// </summary>
+        public string HousingUnits { get; set; }
+
+        /// <summary>
+        /// Gets or sets total area.
+        /// </summary>
+        public string TotalArea { get; set; }
+
+        /// <summary>
+        /// Gets or sets water area.
+        /// </summary>
+        public string WaterArea { get; set; }
+
+        /// <summary>
+        /// Gets or sets land Area.
+        /// </summary>
+        public string LandArea { get; set; }
+
+        /// <summary>
+        /// Gets or sets population Density.
+        /// </summary>
+        public string PopulationDensity { get; set; }
+
+        /// <summary>
+        /// Gets or sets housing Density.
+        /// </summary>
+        public string HousingDensity { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsStateCensusDataDAO"/> class.
+        /// Parameterized contructor.
+        /// </summary>
+        /// <param name="element">element.</param>
+        public UsStateCensusDataDAO(string element)
+        {
+            string[] arr = element.Split(",");
+            this.StateId = arr[0];
+            this.State = arr[1];
+            this.Population = arr[2];
+            this.HousingUnits = arr[3];
+            this.TotalArea = arr[4];
+            this.WaterArea = arr[5];
+            this.LandArea = arr[6];
+            this.PopulationDensity = arr[7];
+            this.HousingDensity = arr[8];
+        }
+    }
 }
