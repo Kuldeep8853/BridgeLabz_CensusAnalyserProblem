@@ -35,8 +35,10 @@ namespace CensusAnalyserProblem
             // {
             //    Console.WriteLine(data.Value.ToString());
             // }
-             Utility.IndianCensusData();
-           // Utility.ConvertCsvFileToJsonObject(@"D:\BridgeLabz_CensusAnalyserProblem\USCensusData.csv", @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\UsCensusData.json");
+            // Utility.IndianCensusData();
+            Utility.SortStatePopulation(@"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\UsCensusData.json");
+
+            // Utility.ConvertCsvFileToJsonObject(@"D:\BridgeLabz_CensusAnalyserProblem\USCensusData.csv", @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\UsCensusData.json");
         }
     }
 }

@@ -53,7 +53,7 @@ namespace CensusAnalyserProblem
             {
                 for (int j = 0; j < stateArrary.Count - i - 1; j++)
                 {
-                    if (stateArrary[j]["StateName"].ToString().CompareTo(stateArrary[j + 1]["StateName"].ToString()) > 0)
+                    if ((int)stateArrary[j]["Population"] < (int)stateArrary[j + 1]["Population"])
                     {
                         count++;
                         var tamp = stateArrary[j + 1];
