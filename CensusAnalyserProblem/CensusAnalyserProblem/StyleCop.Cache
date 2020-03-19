@@ -47,7 +47,7 @@
     <timestamps>
       <styleCop>2020-03-11 17:47:24.581</styleCop>
       <settingsFile>2020-03-11 17:47:24.545</settingsFile>
-      <sourceFile>2020-03-13 10:55:56.007</sourceFile>
+      <sourceFile>2020-03-18 15:55:12.213</sourceFile>
       <parser>2020-03-11 17:47:24.581</parser>
       <StyleCop.CSharp.DocumentationRules>2020-03-11 17:47:24.581</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1271389019</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -66,8 +66,8 @@
     </timestamps>
     <violations>
       <violation namespace="StyleCop.CSharp.CsParser" rule="SyntaxException" ruleCheckId="SA0102">
-        <context>A syntax error has been discovered in file D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\Utility.cs on line 33.</context>
-        <line>33</line>
+        <context>A syntax error has been discovered in file D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\Utility.cs on line 37.</context>
+        <line>37</line>
         <warning>False</warning>
       </violation>
     </violations>

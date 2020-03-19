@@ -162,9 +162,11 @@ namespace UnitTesting
         [Test]
         public void Comparing_FistStateCensus_Name()
         {
+            StateCensusAnalyser stateCensusAnalyser = new StateCensusAnalyser();
+            CSVStateCensus cSVStateCensus = new CSVStateCensus(stateCensusAnalyser);
             string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
-            string actual = Utility.FirstElementNameOfJsonArray(jsonFilePath, "State");
-            string expected = "Andhra Pradesh";
+            string actual = cSVStateCensus.FirstElementNameOfJsonArray(jsonFilePath, "State");
+            string expected = "Rajasthan";
             Assert.AreEqual(actual, expected);
         }
 
@@ -174,9 +176,11 @@ namespace UnitTesting
         [Test]
         public void Comparing_LastStateCensus_Name()
         {
+            StateCensusAnalyser stateCensusAnalyser = new StateCensusAnalyser();
+            CSVStateCensus cSVStateCensus = new CSVStateCensus(stateCensusAnalyser);
             string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVStateCensus.json";
-            string actual = Utility.LastElementNameOfJsonArray(jsonFilePath, "State");
-            string expected = "West Bengal";
+            string actual = cSVStateCensus.LastElementNameOfJsonArray(jsonFilePath, "State");
+            string expected = "Arunachal Pradesh";
             Assert.AreEqual(actual, expected);
         }
 
@@ -186,9 +190,11 @@ namespace UnitTesting
         [Test]
         public void Comparing_FistStateCode_Name()
         {
+            StateCensusAnalyser stateCensusAnalyser = new StateCensusAnalyser();
+            CSVStateCensus cSVStateCensus = new CSVStateCensus(stateCensusAnalyser);
             string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVState.json";
-            string actual = Utility.FirstElementNameOfJsonArray(jsonFilePath, "StateName");
-            string expected = "Andhra Pradesh New";
+            string actual = cSVStateCensus.FirstElementNameOfJsonArray(jsonFilePath, "StateName");
+            string expected = "Andaman and Nicobar Islands";
             Assert.AreEqual(actual, expected);
         }
 
@@ -198,8 +204,10 @@ namespace UnitTesting
         [Test]
         public void Comparing_LastStateCode_Name()
         {
+            StateCensusAnalyser stateCensusAnalyser = new StateCensusAnalyser();
+            CSVStateCensus cSVStateCensus = new CSVStateCensus(stateCensusAnalyser);
             string jsonFilePath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVState.json";
-            string actual = Utility.LastElementNameOfJsonArray(jsonFilePath, "StateName");
+            string actual = cSVStateCensus.LastElementNameOfJsonArray(jsonFilePath, "StateName");
             string expected = "West Bengal";
             Assert.AreEqual(actual, expected);
         }

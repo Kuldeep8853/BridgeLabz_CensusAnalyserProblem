@@ -4,19 +4,56 @@
 // </copyright>
 // <creator name="Kuldeep Kasaudhan"/>
 // ----------------------------------------------------------------------------------------------------------------------
-
 namespace CensusAnalyserProblem
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Runtime.InteropServices;
 
     /// <summary>
     /// CSVStateCensus class Read and Load CSV File.
     /// </summary>
-    public class CSVStateCensus : ICSVFileBuilder
+    public class CSVStateCensus : ICSVFileBuilder, IAdapter
     {
+        /// <summary>
+        /// Create Iadaper tyre instance.
+        /// </summary>
+        private IAdapter adapter;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CSVStateCensus"/> class.
+        /// Parameterize Contructor.
+        /// </summary>
+        /// <param name="adapter">adapter.</param>
+        public CSVStateCensus([Optional]IAdapter adapter)
+        {
+            this.adapter = adapter;
+        }
+
+        /// <summary>
+        /// Impement the interface method.
+        /// </summary>
+        /// <param name="path">path.</param>
+        /// <param name="elementName">elementName.</param>
+        /// <returns>string.</returns>
+        public string FirstElementNameOfJsonArray(string path, string elementName)
+        {
+            return this.adapter.FirstElementNameOfJsonArray(path, elementName);
+        }
+
+        /// <summary>
+        /// Impement the interface method.
+        /// </summary>
+        /// <param name="path">path.</param>
+        /// <param name="elementName">elementName.</param>
+        /// <returns>string.</returns>
+        public string LastElementNameOfJsonArray(string path, string elementName)
+        {
+            return this.adapter.LastElementNameOfJsonArray(path, elementName);
+        }
+
         /// <summary>
         /// StateLoadData method.
         /// </summary>

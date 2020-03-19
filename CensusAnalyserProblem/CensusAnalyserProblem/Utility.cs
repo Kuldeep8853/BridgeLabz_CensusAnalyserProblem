@@ -4,7 +4,6 @@
 // </copyright>
 // <creator name="Kuldeep Kasaudhan"/>
 // ----------------------------------------------------------------------------------------------------------------------
-
 namespace CensusAnalyserProblem
 {
     using System;
@@ -84,33 +83,6 @@ namespace CensusAnalyserProblem
         }
 
         /// <summary>
-        /// Return The first element  state name of Json Array.
-        /// </summary>
-        /// <param name="path">path.</param>
-        /// <param name="elementName">elementName.</param>
-        /// <returns>string.</returns>
-        public static string FirstElementNameOfJsonArray(string path, string elementName)
-        {
-            string json = File.ReadAllText(path);
-            JArray stateArrary = JArray.Parse(json);
-            return stateArrary[0][elementName].ToString();
-        }
-
-        /// <summary>
-        /// Return The first element  state name of Json Array.
-        /// </summary>
-        /// <param name="path">path.</param>
-        /// <param name="elementName">elementName.</param>
-        /// <returns>string.</returns>
-        public static string LastElementNameOfJsonArray(string path, string elementName)
-        {
-            string json = File.ReadAllText(path);
-            JArray stateArrary = JArray.Parse(json);
-            int length = stateArrary.Count;
-            return stateArrary[length - 1][elementName].ToString();
-        }
-
-        /// <summary>
         /// Sort the csv file.
         /// </summary>
         /// <param name="lines">filePath.</param>
@@ -131,42 +103,63 @@ namespace CensusAnalyserProblem
         }
 
         /// <summary>
-        /// Merge the state cde data and state census data.
+        /// Merge the both file data in Indian census data.
         /// </summary>
-        public static void MergeStateCensusAndStateCode()
+        /// <returns> Dictionary.<int, Dictionary<string, string>>.</returns>
+        public static Dictionary<int, Dictionary<string, string>> IndianCensusData()
         {
-            var file_total = File.ReadLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv");
-            var file_total1 = File.ReadLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv");
-            Dictionary<int, List<string>> map = new Dictionary<int, List<string>>();
-            string[] line_element = file_total.ToArray();
-            string[] line_element1 = file_total1.ToArray();
-            for (int i = 1; i < line_element1.Length; i++)
+            string[] censusData = File.ReadAllLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCensusData.csv");
+            string[] stateCodeData = File.ReadAllLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv");
+            Dictionary<int, Dictionary<string, string>> indiaData = new Dictionary<int, Dictionary<string, string>>();
+            Dictionary<string, string> keyValuePairs = null;
+            string[] censusHead = censusData[0].Split(',');
+            string[] stateCodeHead = stateCodeData[0].Split(',');
+            for (int i = 1; i < stateCodeData.Length; i++)
             {
-                List<string> list = new List<string>();
-                StateCodeDataDAO node = StateCodeDataDAO.CreateNode(line_element[i]);
-                StateCensusDataDAO node1 = StateCensusDataDAO.CreateNode(line_element1[i]);
-                list.Add(node.serialNo.ToString());
-                list.Add(node.stateCode);
-                list.Add(node.stateName);
-                list.Add(node.tIN.ToString());
-                list.Add(node1.population.ToString());
-                list.Add(node1.areaInSqKm.ToString());
-                list.Add(node1.densityPerSqKm.ToString());
-                map.Add(i, list);
+                keyValuePairs = new Dictionary<string, string>();
+                string[] data1 = stateCodeData[i].Split(',');
+                for (int j = 1; j < censusData.Length; j++)
+                {
+                    string[] data2 = censusData[j].Split(',');
+                    if (data1[1].ToString().Equals(data2[0].ToString()))
+                    {
+                        int a = 1;
+                        for (int k = 0; k < data2.Length; k++)
+                        {
+                            keyValuePairs.Add(stateCodeHead[k], data1[k]);
+                            if (a < 4)
+                            {
+                                keyValuePairs.Add(censusHead[a], data2[a]);
+                                a++;
+                            }
+                        }
+
+                        break;
+                    }
+                }
+
+                for (int k = 0; k < data1.Length; k++)
+                {
+                    try
+                    {
+                        keyValuePairs.Add(stateCodeHead[k], data1[k]);
+                    }
+                    catch (Exception)
+                    {
+                        break;
+                    }
+                }
+
+                indiaData.Add(i, keyValuePairs);
             }
 
-            foreach (var data in map)
-            {
-                Console.WriteLine("{ ");
-                Console.WriteLine("SerialNo: " + data.Value[0]);
-                Console.WriteLine("StateCode: " + data.Value[1]);
-                Console.WriteLine("StateName: " + data.Value[2]);
-                Console.WriteLine("TIN: " + data.Value[3]);
-                Console.WriteLine("Population: " + data.Value[4]);
-                Console.WriteLine("AreaInSqKm: " + data.Value[5]);
-                Console.WriteLine("DensityPerSqKm: " + data.Value[6]);
-                Console.WriteLine(" },");
-            }
+            string indiajsonPath = @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\IndianCensusData.json";
+            var json = JsonConvert.SerializeObject(indiaData, Formatting.Indented);
+            File.WriteAllText(indiajsonPath, json);
+            string jsonObj = File.ReadAllText(indiajsonPath);
+            var jsonArray = JsonConvert.DeserializeObject(jsonObj);
+            Console.WriteLine(jsonArray);
+            return indiaData;
         }
     }
 }

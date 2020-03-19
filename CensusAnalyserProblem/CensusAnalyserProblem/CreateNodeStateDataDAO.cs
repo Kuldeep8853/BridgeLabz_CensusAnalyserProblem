@@ -16,22 +16,22 @@ namespace CensusAnalyserProblem
         /// <summary>
         /// statename.
         /// </summary>
-        public string stateName;
+        public string StateName;
 
         /// <summary>
         /// population.
         /// </summary>
-        public int population;
+        public int Population;
 
         /// <summary>
         /// area in sq km.
         /// </summary>
-        public int areaInSqKm;
+        public int AreaInSqKm;
 
         /// <summary>
         /// density per sq km.
         /// </summary>
-        public int densityPerSqKm;
+        public int DensityPerSqKm;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StateCensusDataDAO"/> class.
@@ -58,16 +58,16 @@ namespace CensusAnalyserProblem
                 newnode = new StateCensusDataDAO();
                 string[] arr = element.Split(",");
 
-                newnode.stateName = arr[0];
-                newnode.population = Convert.ToInt32(arr[1]);
+                newnode.StateName = arr[0];
+                newnode.Population = Convert.ToInt32(arr[1]);
                 if (arr[2] != null)
                 {
-                    newnode.areaInSqKm = Convert.ToInt32(arr[2]);
+                    newnode.AreaInSqKm = Convert.ToInt32(arr[2]);
                 }
 
                 if (arr[3] != null)
                 {
-                    newnode.densityPerSqKm = Convert.ToInt32(arr[3]);
+                    newnode.DensityPerSqKm = Convert.ToInt32(arr[3]);
                 }
 
                 return newnode;
@@ -87,22 +87,22 @@ namespace CensusAnalyserProblem
         /// <summary>
         /// The serial no.
         /// </summary>
-        public int serialNo;
+        public int SerialNo;
 
         /// <summary>
         /// The state name.
         /// </summary>
-        public string stateName;
+        public string StateName;
 
         /// <summary>
         /// The tin.
         /// </summary>
-        public int tIN;
+        public int TIN;
 
         /// <summary>
         /// state code.
         /// </summary>
-        public string stateCode;
+        public string StateCode;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StateCodeDataDAO"/> class.
@@ -128,10 +128,10 @@ namespace CensusAnalyserProblem
 
                 newnode = new StateCodeDataDAO();
                 string[] arr = element.Split(",");
-                newnode.serialNo = Convert.ToInt32(arr[0]);
-                newnode.stateName = arr[1];
-                newnode.tIN = Convert.ToInt32(arr[2]);
-                newnode.stateCode = arr[3];
+                newnode.SerialNo = Convert.ToInt32(arr[0]);
+                newnode.StateName = arr[1];
+                newnode.TIN = Convert.ToInt32(arr[2]);
+                newnode.StateCode = arr[3];
                 return newnode;
             }
             catch (Exception)

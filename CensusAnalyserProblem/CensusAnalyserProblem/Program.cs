@@ -22,20 +22,21 @@ namespace CensusAnalyserProblem
         public static void Main()
         {
             // Utility.SortStatePopulation(@"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\CSVState.json");
-            //var file_total = File.ReadLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv");
-            //Dictionary<int, StateCodeDataDAO> map = new Dictionary<int, StateCodeDataDAO>();
-            //string[] line_element = file_total.ToArray();
-            //for (int i = 1; i < line_element.Length; i++)
-            //{
+            // var file_total = File.ReadLines(@"D:\BridgeLabz_CensusAnalyserProblem\StateCode.csv");
+            // Dictionary<int, StateCodeDataDAO> map = new Dictionary<int, StateCodeDataDAO>();
+            // string[] line_element = file_total.ToArray();
+            // for (int i = 1; i < line_element.Length; i++)
+            // {
             //    StateCodeDataDAO node = StateCodeDataDAO.CreateNode(line_element[i]);
             //    map.Add(i, node);
-            //}
+            // }
 
-            //foreach (KeyValuePair<int, StateCodeDataDAO> data in map)
-            //{
+            // foreach (KeyValuePair<int, StateCodeDataDAO> data in map)
+            // {
             //    Console.WriteLine(data.Value.ToString());
-            //}
-            Utility.MergeStateCensusAndStateCode();
+            // }
+            // Utility.IndianCensusData();
+            Utility.ConvertCsvFileToJsonObject(@"D:\BridgeLabz_CensusAnalyserProblem\USCensusData.csv", @"D:\BridgeLabz_CensusAnalyserProblem\CensusAnalyserProblem\CensusAnalyserProblem\UsCensusData.json");
         }
     }
 }
